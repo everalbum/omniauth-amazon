@@ -22,7 +22,7 @@ module OmniAuth
 
       def build_access_token
         token_params = {
-          :redirect_uri => callback_url,
+          :redirect_uri => (full_host + script_name + callback_path),
           :client_id => client.id,
           :client_secret => client.secret
         }
